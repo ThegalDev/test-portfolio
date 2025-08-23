@@ -834,82 +834,137 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
   .menu-toggle {
-      display: block;
+    display: block;
   }
 
   .nav-links {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: var(--white);
-      flex-direction: column;
-      padding: 2rem;
-      box-shadow: var(--shadow);
-      transform: translateY(-100%);
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
   }
 
   .nav-links.active {
-      transform: translateY(0);
-      opacity: 1;
-      visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .hero h1 {
-      font-size: 2.5rem;
+    font-size: 2.5rem;
   }
 
   .hero .subtitle {
-      font-size: 1.1rem;
+    font-size: 1.1rem;
   }
 
   .section-title {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 
   .about-content,
   .contact-content {
-      grid-template-columns: 1fr;
-      gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .about-stats {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
   .achievements-grid {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .projects-grid {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
+  /* FIXED: Tools grid for tablet/medium screens */
   .tools-grid {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
+
 @media (max-width: 480px) {
   .container {
-      padding: 0 1rem;
+    padding: 0 1rem;
+  }
+
+  .hero {
+    padding: 1.5rem 0.5rem; /* ← CHANGED from 5rem 1rem */
+    min-height: 100vh; /* ← ADDED THIS */
   }
 
   .hero-image {
-      width: 150px;
-      height: 150px;
+    margin-bottom: 1rem; /* ← ADDED THIS */
+  }
+
+  .hero-image img { /* ← CHANGED from .hero-image selector */
+    width: 180px; /* ← CHANGED from 150px */
+    height: 180px; /* ← CHANGED from 150px */
   }
 
   .hero h1 {
-      font-size: 2rem;
+    font-size: 2rem;
+    margin-bottom: 0.5rem; /* ← ADDED THIS */
+    line-height: 1.1; /* ← ADDED THIS */
   }
 
-  .achievements-grid,
+  .hero .subtitle { /* ← ADDED ENTIRE BLOCK */
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    padding: 0 1rem;
+  }
+
+  .hero-buttons { /* ← ADDED ENTIRE BLOCK */
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .cta-button, /* ← ADDED ENTIRE BLOCK */
+  .cta-buttons {
+    width: 180px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+
   .tools-grid {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  /* Shape adjustments - ALL NEW */
+  .shape-1 {
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    right: -100px;
+  }
+
+  .shape-2 {
+    width: 150px;
+    height: 150px;
+    bottom: -80px;
+    left: -80px;
+  }
+
+  .shape-3 {
+    width: 120px;
+    height: 120px;
   }
 }
 
@@ -935,4 +990,33 @@ footer {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+}
+
+@media (max-width: 360px) {
+  .hero {
+    padding: 1rem 0.5rem;
+  }
+
+  .hero-image img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .cta-button,
+  .cta-buttons {
+    width: 160px;
+  }
 }
