@@ -831,6 +831,10 @@ footer {
   padding: 2rem 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .menu-toggle {
